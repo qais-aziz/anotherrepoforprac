@@ -6,7 +6,8 @@ absolutePathCSS = __dirname + '/public';
 app.use("/public", express.static(absolutePathCSS));
 absolutePath = __dirname + '/views/index.html';
 app.get('/json', function(req, res){
-    if(process.env.MESSAGE_STYLE ==="uppercase"){
+    MESSAGE_STYLE = process.env.MESSAGE_STYLE;
+    if(MESSAGE_STYLE ==="uppercase"){
         res.json({
             "message": "HELLO JSON"
         })
