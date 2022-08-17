@@ -6,10 +6,11 @@ absolutePathCSS = __dirname + '/public';
 app.use("/public", express.static(absolutePathCSS));
 absolutePath = __dirname + '/views/index.html';
 app.get('/json', function(req, res){
+    var response = "Hello json";
     MESSAGE_STYLE = process.env.MESSAGE_STYLE;
     if(MESSAGE_STYLE ==="uppercase"){
         res.json({
-            "message": "HELLO JSON"
+            "message": "Hello json".toUpperCase
         })
     }
     else{
