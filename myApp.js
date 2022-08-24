@@ -9,12 +9,12 @@ absolutePath = __dirname + '/views/index.html';
 app.get('/json', function(req, res){
     var response = {"message": "Hello json"};
     if(process.env.MESSAGE_STYLE === "uppercase")
-    response = "Hello json".toUpperCase();
+    response = {"message": "HELLO JSON"}
     else
-    response = "Hello json"
+    response = {"message": "Hello json"}
   
     
-        res.send(response)
+        res.json(response)
 })
 app.get('/public', function (req, res) {
     res.sendFile(absolutePath)
