@@ -7,15 +7,14 @@ app.use("/public", express.static(absolutePathCSS));
 absolutePath = __dirname + '/views/index.html';
 
 app.get('/json', function(req, res){
+    var response = {"message": "Hello json"};
     if(process.env.MESSAGE_STYLE === "uppercase")
-    var response = {"message": "HELLO JSON"};
+    response = "Hello json".toUpperCase();
     else
-    var response = {"message": "Hello json"}
+    response = "Hello json"
   
     
-        res.json(
-            response
-        )
+        res.send(response)
 })
 app.get('/public', function (req, res) {
     res.sendFile(absolutePath)
